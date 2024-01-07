@@ -21,16 +21,6 @@ class Producto(db.Model):
     estado = db.Column(db.Boolean)
     fecha_ingreso = db.Column(db.Date)
 
-@app.route("/productos")
-def productos():
-    # Realizamos una consulta a la base de datos
-
-    productos = Producto.query.filter_by(estado=True).all()
-
-    # Devolvemos los productos en formato JSON
-
-    return jsonify([producto.to_dict() for producto in productos])
-
 
 
 @app.route('/')
@@ -41,9 +31,17 @@ def hello_world():
 def users():
     return str(User.query.all())
 
-@app.route('/productos')
+
+@app.route("/productos")
 def productos():
-    return str(Producto.query.all())
+    # Realizamos una consulta a la base de datos
+
+    productos = Producto.query.filter_by(estado=True).all()
+
+    # Devolvemos los productos en formato JSON
+
+    return jsonify([producto.to_dict() for producto in productos])
+
 
 
 if __name__ == '__main__':
