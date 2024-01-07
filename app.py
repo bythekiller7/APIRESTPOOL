@@ -13,6 +13,20 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.name}>'
 
+class Producto(db.Model):
+    id_producto = db.Column(db.Integer, primary_key=True)
+    descripcion_producto = db.Column(db.String(100))
+    id_tipo_producto = db.Column(db.Integer)
+    precio = db.Column(db.Float)
+    estado = db.Column(db.Boolean)
+    fecha_ingreso = db.Column(db.Date)
+
+    def __repr__(self):
+        return f'<Producto {self.descripcion_producto}>'
+
+
+
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -20,6 +34,11 @@ def hello_world():
 @app.route('/users')
 def users():
     return str(User.query.all())
+
+@app.route('/productos')
+def productos():
+    return str(Producto.query.all())
+
 
 if __name__ == '__main__':
     app.run()
