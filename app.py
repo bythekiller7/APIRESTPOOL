@@ -21,6 +21,15 @@ class Producto(db.Model):
     estado = db.Column(db.Boolean)
     fecha_ingreso = db.Column(db.Date)
 
+    def to_dict(self):
+        return {
+            "id_producto": self.id_producto,
+            "descripcion_producto": self.descripcion_producto,
+            "id_tipo_producto": self.id_tipo_producto,
+            "precio": self.precio,
+            "estado": self.estado,
+            "fecha_ingreso": self.fecha_ingreso
+        }
 
 
 @app.route('/')
