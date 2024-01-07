@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -21,9 +21,15 @@ class Producto(db.Model):
     estado = db.Column(db.Boolean)
     fecha_ingreso = db.Column(db.Date)
 
-    def __repr__(self):
-        return f'<Producto {self.descripcion_producto}>'
+@app.route("/productos")
+def productos():
+    # Realizamos una consulta a la base de datos
 
+    productos = Producto.query.filter_by(estado=True).all()
+
+    # Devolvemos los productos en formato JSON
+
+    return jsonify([producto.to_dict() for producto in productos])
 
 
 
