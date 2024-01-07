@@ -36,7 +36,7 @@ def users():
 def productos():
     # Realizamos una consulta a la base de datos
 
-    productos = Producto.query.filter_by(estado=True).all()
+    productos = Producto.query.filter_by(estado='activo').all()
 
     # Devolvemos los productos en formato JSON
 
