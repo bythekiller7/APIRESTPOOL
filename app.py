@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fl0user:WwLKFD1sSgj7@ep-tiny-wave-24232962.us-east-2.aws.neon.fl0.io:5432/PoolDogSv?sslmode=require'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fl0user:WwLKFD1sSgj7@ep-tiny-wave-24232962.us-east-2.aws.neon.fl0.io:5432/PoolDogSv?sslmode=require'
 db = SQLAlchemy(app)
 
 class User(db.Model):
