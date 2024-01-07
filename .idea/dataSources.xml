@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="PoolDogSv@ep-tiny-wave-24232962.us-east-2.aws.neon.fl0.io" uuid="f6023a12-32ef-4aea-ac8f-92b1af183edf">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ep-tiny-wave-24232962.us-east-2.aws.neon.fl0.io:5432/PoolDogSv</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
